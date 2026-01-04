@@ -21,35 +21,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* .loader {
+/* BootScreen animation */
+@keyframes slide {
+  0% { transform: translateX(-200%); }
+  100% { transform: translateX(300%); }
+}
+.animate-slide {
   display: inline-block;
-  height: 100%;
-  width: 9px;
-  margin-right: 2px;
-  border-radius: 2px;
-  background: linear-gradient(
-    to bottom,
-    #2838c7 0%,
-    #5979ef 17%,
-    #869ef3 32%,
-    #869ef3 45%,
-    #5979ef 59%,
-    #2838c7 100%
-  );
-  animation: loader 1.5s linear infinite;
-} */
-
-/* .loading {
-  width: 9px;
-  height: 100%;
-  display: inline-block;
-  border-radius: 2px;
-  margin-right: 2px;
-  background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
-  animation: loader;
-  animation-delay: 0ms;
-} */
+  animation: slide 2s linear infinite;
+}
 
 .container::before {
   content: "";

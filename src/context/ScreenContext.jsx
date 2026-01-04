@@ -5,8 +5,20 @@ const ScreenContext = createContext();
 export function ScreenProvider( {children} ) {
     const [screen, setScreen] = useState("load"); // load -> login -> desktop
 
+    const goToLogin = () => setScreen('login');
+    const goToDesktop = () => setScreen('desktop');
+    const reboot = () => setScreen('load')
+
     return (
-        <ScreenContext.Provider value = { {screen, setScreen} }>
+        <ScreenContext.Provider 
+        value = {{
+            screen,
+            setScreen, 
+            goToLogin, 
+            goToDesktop, 
+            reboot
+        }}
+        >
             {children}
         </ScreenContext.Provider>
     )
