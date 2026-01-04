@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 
 import { useScreen } from "./context/ScreenContext.jsx";
 
+import dayjs from 'dayjs';
+
 // import img from './assets/images/windows_logo.png';
 // import logo from './assets/images/logo.png';
-// import desktopIocn from './assets/images/desktop_profile_icon.jpg';
+import desktopIocn from './assets/images/desktop_profile_icon.jpg';
 // import startBtn from './assets/images/start_btn_normal.png';
 
 // import './App.css'
@@ -99,9 +101,12 @@ function App() {
             <div className="bg-[url('./assets/icons/TourXP.png')] taskbar-icons "></div>
             <div className="bg-[url('./assets/icons/SecurityError.png')] taskbar-icons "></div>
             <div className="bg-[url('./assets/icons/Volume.png')] taskbar-icons "></div>
-            <span className='off-white text-[11px] px-1'>11:30 PM</span>
+            <time className='off-white text-[11px] px-1'>
+              {dayjs().format("h:mm A")}
+            </time>
           </div>
         </section>
+        
       </main>
     </>
   );
